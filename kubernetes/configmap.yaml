@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: fraud-detection
+data:
+  DATABASE_URL: "postgresql+asyncpg://postgres:password@postgres-service:5432/fraud_detection"
+  REDIS_URL: "redis://redis-service:6379"
+  API_V1_PREFIX: "/api/v1"
+  FRAUD_SCORE_THRESHOLD: "0.7"
+  MAX_DAILY_TRANSFER_AMOUNT: "10000.0"
+  MAX_TRANSFER_FREQUENCY: "10"
+  ACCESS_TOKEN_EXPIRE_MINUTES: "30"
+  ALGORITHM: "HS256"
